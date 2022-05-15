@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>HTML Url</th>
+      <th>description</th>
+      <th>Created</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repo of repos;">
+      <td>{{repo.id}}</td>
+      <td>{{repo.name | uppercase}}</td>
+      <td>{{repo.html_url | lowercase}}</td>
+      <td>{{repo.description | titlecase}}</td>
+      <td>{{repo.created_at |  date: 'dd/MM/yyyy'}}</td>
+      <td>{{repo.created_at |  age:' days ago' }}</td> <!--Custom Pipe-->
+    
+    </tr>
+  </tbody>
+</table>
+
+<pre>{{repos | json}} </pre> <!--Json pipes. <pre> give more readablity to the json  -->
